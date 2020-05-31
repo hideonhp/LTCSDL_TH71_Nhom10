@@ -1,0 +1,16 @@
+<h1 id="tableLabel1">Loại sản phẩm</h1>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="lstLoaiSanPham">
+    <thead>
+      <tr>
+        <th>idLoai</th>
+        <th>tenLoai</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let loaiSanPham of lstLoaiSanPham">
+        <td>{{ loaiSanPham.idLoai }}</td>
+        <td>{{ loaiSanPham.tenLoai }}</td>
+      </tr>
+    </tbody>
+</table>
+  

@@ -1,0 +1,83 @@
+<h1 id="tableLabel">Sản phẩm</h1>
+
+<p *ngIf="!products"><em>Loading...</em></p>
+<button class="btn btn-primary"(click)="openModal(true,null)">Thêm sản phẩm mới</button>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="products.totalRecord>0">
+    <thead>
+      <tr>
+        <th>idSanPham</th>
+        <th>ten</th>
+        <th>moTa</th>
+        <th>gia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let showall of products.data">
+        <td>{{ showall.idSanPham }}</td>
+        <td>{{ showall.ten }}</td>
+        <td>{{ showall.moTa }}</td>
+        <td>{{ showall.gia }}</td>
+        <td>
+          <button class="btn btn-info btm-sm"(click)="openModal(false,p)">Sửa</button>
+          <button class="btn btn-danger btm-sm"(click)="deleteProduct(p)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="pagination">
+    <li class="page-item">
+            <a href="javascript:void(0);" (click)="searchPrevious()">Trang Trước</a>
+    </li>
+    <li class="page-item">{{products.page}}</li>
+    <li class="page-item">
+            <a href="javascript:void(0);" (click)="searchNext()">Trang Sau</a>
+    </li>
+
+  </ul>
+  
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" *ngIf ="!isEdit" id="exampleModalLabel">Thêm sản phẩm mới</h5>
+          <h5 class="modal-title" *ngIf ="isEdit" id="exampleModalLabel">Cập nhập sản phẩm mới</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row" *ngIf ="isEdit">
+            <div class="col-4">Id</div>
+            <div class="col-8"><input class="form-control" type="number" [(ngModel)]="product.idSanPham"></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-4">Tên</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="product.ten"></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-4">Loại</div>
+            <div class="col-8"><input class="form-control" type="number" [(ngModel)]="product.IdLoai"></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-4">Mô tả</div>
+            <div class="col-8"><input class="form-control"[(ngModel)]="product.moTa"></div>
+          </div>
+          <br/>
+          <div class="row">
+            <div class="col-4">Giá</div>
+            <div class="col-8"><input class="form-control" [(ngModel)]="product.gia"></div>
+          </div>
+          <br/>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+          <button type="button" class="btn btn-primary">Lưu lại</button>
+          <button type="button" class="btn btn-success" (click)="addProduct()">Thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>

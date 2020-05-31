@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace WebApplication1.Models
+{
+    public partial class ChiTietDonHang
+    {
+        public int IdSanPham { get; set; }
+        public int IdDonHang { get; set; }
+        public string SoLuong { get; set; }
+
+        public virtual DonHang IdDonHangNavigation { get; set; }
+        public virtual SanPham IdSanPhamNavigation { get; set; }
+    }
+}
