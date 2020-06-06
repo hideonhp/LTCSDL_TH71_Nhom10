@@ -14,14 +14,14 @@ export class SanPhamComponent implements OnInit {
     totalRecord:0,
     page:0,
     size:5,
-    TotalPage:0
+    totalPage:0
   }
   product: any ={
-    idSanPham : 2,
-    IdLoai : 2,
-    ten : "Samsung S20",
-    moTa : "Điện thoại cùi bắp",
-    gia : 1200
+    idSanPham : 0,
+    IdLoai : 0,
+    ten : null,
+    moTa : null,
+    gia : null
   }
   isEdit : boolean = true;
 
@@ -41,10 +41,11 @@ export class SanPhamComponent implements OnInit {
       this.http.post("https://localhost:44357/api/SanPham/tim-kiem-san-pham", x).subscribe(result =>{
         this.products = result;
         this.products = this.products.data;
+        console.log(this.products);
       },error=>console.error(error));
     }
     searchNext(){
-      if(this.products.page<this.products.TotalPage){
+      if(this.products.page < this.products.totalPage){
         let nextPage = this.products.page+1;
         let x={
           page:nextPage,
@@ -61,7 +62,7 @@ export class SanPhamComponent implements OnInit {
       }
     }
     searchPrevious(){
-      if(this.products.page<this.products.TotalPage){
+      if(this.products.page<this.products.totalPage){
         let nextPage = this.products.page-1;
         let x={
           page:nextPage,
@@ -90,6 +91,8 @@ export class SanPhamComponent implements OnInit {
         }
       }else{
         this.isEdit= true;
+        console.log(index)
+        console.log(this.products.data[index])
         this.product = this.products.data[index];
       }
       $('#exampleModal').modal("show");
@@ -103,6 +106,32 @@ export class SanPhamComponent implements OnInit {
             this.products = res.data;
             this.isEdit = true;
             this.searchProduct(1);
+            alert("Thêm sản phẩm thành công !!!")
+          }
+        },error=>console.error(error));
+    }
+    updateProduct()
+    {
+      var x = this.product;
+      this.http.post("https://localhost:44357/api/SanPham/cap-nhap-san-pham", x).subscribe(result =>{
+          var res:any = result;
+          if(res.success){
+            this.products = res.data;
+            this.isEdit = true;
+            this.searchProduct(1);
+            alert("Cập nhập sản phẩm thành công !!!")
+          }
+        },error=>console.error(error));
+    }
+    deleteProduct()
+    {
+      var x = this.product;
+      this.http.post("https://localhost:44357/api/SanPham/xoa-san-pham", x).subscribe(result =>{
+          var res:any = result;
+          if(res.success){
+            this.products = res.data;
+            this.searchProduct(1);
+            alert("Xóa sản phẩm thành công !!!")
           }
         },error=>console.error(error));
     }

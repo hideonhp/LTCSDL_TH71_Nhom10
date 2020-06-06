@@ -49,7 +49,6 @@ namespace Shopeee.BLL
             products.Gia = pro.Gia;
             res = _rep.CreateProduct(products);
             return res;
-
         }
         public SingleRsp UpdateProduct(ProductsReq pro)
         {
@@ -62,7 +61,7 @@ namespace Shopeee.BLL
             products.Gia = pro.Gia;
             res = _rep.UpdateProduct(products);
             return res;
-
         }
+
     }
 }

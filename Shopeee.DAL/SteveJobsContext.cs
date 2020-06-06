@@ -96,24 +96,15 @@ namespace Shopeee.DAL.Models
 
                 entity.Property(e => e.TenLoai)
                     .IsRequired()
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                    .HasMaxLength(50);
+                    //.IsUnicode(false);
             });
 
             modelBuilder.Entity<NguoiDung>(entity =>
             {
                 entity.HasKey(e => e.IdUser);
-
-                entity.Property(e => e.IdUser).ValueGeneratedNever();
-
-                entity.Property(e => e.DiaChi)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.HoVaTen)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
+                entity.Property(e => e.DiaChi).HasMaxLength(50);
+                entity.Property(e => e.HoVaTen).HasMaxLength(50);
                 entity.Property(e => e.MatKhau)
                     .IsRequired()
                     .HasMaxLength(50)

@@ -1,0 +1,34 @@
+<p>Welcome to hệ thống Log In:</p>
+<div class="row">
+    <div class = "col-4">
+        VUi lòng Nhập tài khoản và mật khẩu: 
+    </div>
+    <div>Tài khoản: </div>
+    <div class = "col-2">
+        <input type ="text" class = "form-control" [(ngModel)] ="TenDangNhap"/>
+    </div>
+    <div>Mật khẩu: </div>
+    <div class = "col-2">
+        <input type ="password" class = "form-control" [(ngModel)] ="MatKhau"/>
+    </div>
+    <div class="col-1"></div>
+    <div class = "col-3">
+        <button class ="btn btn-success" (click) = "dangnhap()">Đăng Nhập</button>
+    </div>
+</div>
+<hr style="height:30px">
+<div class="col-6">Thông tin tài khoản: </div>
+<table class ="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ai ĐI</th>
+            <th>Họ và Tên</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of result; index as i;">
+            <td>{{item.idUser}}</td>
+            <td>{{item.hoVaTen}}</td>
+        </tr>
+    </tbody>
+</table>

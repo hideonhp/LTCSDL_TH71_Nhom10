@@ -40,5 +40,10 @@ namespace Shopeee.Web.Controllers
             var pros = _svc.UpdateProduct(req);
             return Ok(req);
         }
+        [HttpPost("xoa-san-pham")]
+        public IActionResult Remove()
+        {
+            return null;
+        }
     }
 }

@@ -12,14 +12,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let showall of products.data">
-        <td>{{ showall.idSanPham }}</td>
-        <td>{{ showall.ten }}</td>
-        <td>{{ showall.moTa }}</td>
-        <td>{{ showall.gia }}</td>
+      <tr *ngFor="let p of products.data; index as i;">
+        <td>{{ p.idSanPham }}</td>
+        <td>{{ p.ten }}</td>
+        <td>{{ p.moTa }}</td>
+        <td>{{ p.gia }}</td>
         <td>
-          <button class="btn btn-info btm-sm"(click)="openModal(false,p)">Sửa</button>
-          <button class="btn btn-danger btm-sm"(click)="deleteProduct(p)">Xóa</button>
+          <button class="btn btn-info btm-sm"(click)="openModal(false,i)">Sửa</button>
+          <button class="btn btn-danger btm-sm"(click)="deleteProduct(i)">Xóa</button>
         </td>
       </tr>
     </tbody>
@@ -75,7 +75,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-          <button type="button" class="btn btn-primary">Lưu lại</button>
+          <button type="button" class="btn btn-primary" (click)="updateProduct()">Lưu lại</button>
           <button type="button" class="btn btn-success" (click)="addProduct()">Thêm</button>
         </div>
       </div>

@@ -5,6 +5,7 @@ a.navbar-brand {
 }
 
 html {
+  background-color: rgb(210, 200, 210);
   font-size: 14px;
 }
 @media (min-width: 768px) {

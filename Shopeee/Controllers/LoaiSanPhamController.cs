@@ -36,6 +36,11 @@ namespace Shopeee.Web.Controllers
             res.Data = _svc.All;
             return Ok(res);
         }
+        [HttpPost("delete-by-id")]
+        public IActionResult RemoveById()
+        {
+            return null;
+        }
 
 
         private readonly LoaiSanPhamSvc _svc;

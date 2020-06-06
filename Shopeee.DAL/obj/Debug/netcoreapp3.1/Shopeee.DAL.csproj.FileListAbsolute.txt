@@ -6,10 +6,10 @@ C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\bin\Debug\netcoreapp3.1\Shopeee.
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\bin\Debug\netcoreapp3.1\Shopeee.Common.dll
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\bin\Debug\netcoreapp3.1\Shopeee.Common.pdb
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.csprojAssemblyReference.cache
-C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.AssemblyInfo.cs
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.csproj.CopyComplete
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.dll
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.pdb
 C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Shopeee\Shopeee.DAL\obj\Debug\netcoreapp3.1\Shopeee.DAL.csproj.CoreCompileInputs.cache

@@ -2,8 +2,8 @@ C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\bin\Debug\netcoreapp3.1\Shope
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\bin\Debug\netcoreapp3.1\Shopeee.Common.dll
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\bin\Debug\netcoreapp3.1\Shopeee.Common.pdb
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.csprojAssemblyReference.cache
-C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.AssemblyInfoInputs.cache
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.AssemblyInfo.cs
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.dll
 C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.pdb
+C:\Users\Admin\source\repos\Shopeee\Shopeee.Common\obj\Debug\netcoreapp3.1\Shopeee.Common.csproj.CoreCompileInputs.cache
