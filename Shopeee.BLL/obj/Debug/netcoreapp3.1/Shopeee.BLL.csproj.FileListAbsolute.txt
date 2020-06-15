@@ -1,0 +1,17 @@
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.BLL.deps.json
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.BLL.runtimeconfig.json
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.BLL.runtimeconfig.dev.json
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.BLL.dll
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.BLL.pdb
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.Common.dll
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.DAL.dll
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.Common.pdb
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\bin\Debug\netcoreapp3.1\Shopeee.DAL.pdb
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.csproj.CopyComplete
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.dll
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.pdb
+C:\Users\Admin\source\repos\Shopeee\Shopeee.BLL\obj\Debug\netcoreapp3.1\Shopeee.BLL.genruntimeconfig.cache
