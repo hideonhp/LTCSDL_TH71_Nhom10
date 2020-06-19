@@ -8,12 +8,69 @@ using System.Linq;
 using System.Text;
 using Shopeee.DAL.Models;
 using Shopeee.Common.DAl;
-
+using Shopeee.Common.Rsp;
 
 namespace Shopeee.DAL
 {
     public class NguoiDungRep : GenericRep<SteveJobsContext, NguoiDung>
     {
+        public override NguoiDung Read(int id)
+        {
+            var res = All.FirstOrDefault(p => p.IdUser == id);
+            return res;
+        }
+        public int Remove(int id)
+        {
+            var m = base.All.First(i => i.IdUser == id);
+            m = base.Delete(m);
+            return m.IdUser;
+        }
+        public SingleRsp CreateNguoiDung(NguoiDung us)
+        {
+            var res = new SingleRsp();
+            using (var context = new SteveJobsContext())
+            {
+                using (var tran = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var t = context.NguoiDung.Add(us);
+                        context.SaveChanges();
+                        tran.Commit();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        res.SetError(ex.StackTrace);
+                    }
+                }
+            }
+            return res;
+        }
+        public SingleRsp UpdateNguoiDung(NguoiDung us)
+        {
+            var res = new SingleRsp();
+            using (var context = new SteveJobsContext())
+            {
+                using (var tran = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var t = context.NguoiDung.Update(us);
+                        context.SaveChanges();
+                        tran.Commit();
+
+                    }
+                    catch (Exception ex)
+                    {
+                        tran.Rollback();
+                        res.SetError(ex.StackTrace);
+                    }
+                }
+            }
+            return res;
+        }
         public object NguoiDung_Insert(int idTypeUser, string tenDangNhap, string matKhau, string hoVaTen, string soDienThoai, string diaChi)
         {
             List<object> res = new List<object>();

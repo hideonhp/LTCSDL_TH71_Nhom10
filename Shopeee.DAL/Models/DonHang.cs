@@ -16,7 +16,6 @@ namespace Shopeee.DAL.Models
         public string TongTien { get; set; }
         public string TinhTrangDonHang { get; set; }
 
-        public virtual NguoiDung IdUserNavigation { get; set; }
         public virtual ICollection<ChiTietDonHang> ChiTietDonHang { get; set; }
     }
 }

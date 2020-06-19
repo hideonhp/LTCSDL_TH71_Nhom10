@@ -12,7 +12,9 @@ export class DangNhapComponent {
   
     constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string){
     }
-
+    goToDangKi(url: string){
+      window.open(url, "_self");
+    }
     dangnhap()
     {
         var x ={

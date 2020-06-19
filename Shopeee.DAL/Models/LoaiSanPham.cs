@@ -7,12 +7,12 @@ namespace Shopeee.DAL.Models
     {
         public LoaiSanPham()
         {
-            SanPham = new HashSet<Products>();
+            SanPham = new HashSet<SanPham>();
         }
 
         public int IdLoai { get; set; }
         public string TenLoai { get; set; }
 
-        public virtual ICollection<Products> SanPham { get; set; }
+        public virtual ICollection<SanPham> SanPham { get; set; }
     }
 }

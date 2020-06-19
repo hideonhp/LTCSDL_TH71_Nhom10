@@ -10,7 +10,7 @@ using Shopeee.DAL.Models;
 
 namespace Shopeee.BLL
 {
-    public class SanPhamSvc : GenericSvc<SanPhamRep, Products>
+    public class SanPhamSvc : GenericSvc<SanPhamRep, SanPham>
     {
         public override SingleRsp Read(int id)
         {
@@ -41,7 +41,7 @@ namespace Shopeee.BLL
         public SingleRsp CreateProduct(ProductsReq pro)
         {
             var res = new SingleRsp();
-            Products products = new Products();
+            SanPham products = new SanPham();
             products.IdSanPham = pro.IdSanPham;
             products.IdLoai = pro.IdLoai;
             products.Ten = pro.Ten;
@@ -53,7 +53,7 @@ namespace Shopeee.BLL
         public SingleRsp UpdateProduct(ProductsReq pro)
         {
             var res = new SingleRsp();
-            Products products = new Products();
+            SanPham products = new SanPham();
             products.IdSanPham = pro.IdSanPham;
             products.IdLoai = pro.IdLoai;
             products.Ten = pro.Ten;
@@ -61,6 +61,10 @@ namespace Shopeee.BLL
             products.Gia = pro.Gia;
             res = _rep.UpdateProduct(products);
             return res;
+        }
+        public object SanPham_Select_by_Id(int idLoai)
+        {
+            return _rep.SanPham_Select_by_Id(idLoai);
         }
 
     }

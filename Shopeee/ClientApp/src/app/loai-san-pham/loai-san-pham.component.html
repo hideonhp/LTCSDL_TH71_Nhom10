@@ -2,14 +2,16 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="lstLoaiSanPham">
     <thead>
       <tr>
-        <th>idLoai</th>
-        <th>tenLoai</th>
+        <th>Id</th>
+        <th>Tên Loại</th>
+        <th>Chi Tiết</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let loaiSanPham of lstLoaiSanPham">
         <td>{{ loaiSanPham.idLoai }}</td>
         <td>{{ loaiSanPham.tenLoai }}</td>
+        <button type="button" class="btn btn-success">Xem</button>
       </tr>
     </tbody>
 </table>

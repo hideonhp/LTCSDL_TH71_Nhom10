@@ -58,5 +58,45 @@ namespace Shopeee.Web.Controllers
             res.Data = _svc.NguoiDung_DangNhap_Admin_Select(req.TenDangNhap, req.MatKhau);
             return Ok(res);
         }
+        [HttpPost("get-nguoi-dung-by-id")]
+        public IActionResult getLoaiSanPhamById([FromBody]SimpleReq req)
+        {
+            var res = new SingleRsp();
+            res = _svc.Read(req.Id);
+            return Ok(res);
+        }
+
+        [HttpPost("get-nguoi-dung-all")]
+        public IActionResult getAllLoaiSanPhamById()
+        {
+            var res = new SingleRsp();
+            res.Data = _svc.All;
+            return Ok(res);
+        }
+        [HttpPost("tao-nguoi-dung")]
+        public IActionResult CreateNguoiDung([FromBody]NguoiDungReq req)
+        {
+            var pros = _svc.CreateNguoiDung(req);
+            return Ok(req);
+        }
+        [HttpPost("cap-nhap-nguoi-dung")]
+        public IActionResult UpdateNguoiDung([FromBody]NguoiDungReq req)
+        {
+            var pros = _svc.UpdateNguoiDung(req);
+            return Ok(req);
+        }
+        [HttpPost("xoa-nguoi-dung")]
+        public IActionResult Remove()
+        {
+            return null;
+        }
+        [HttpPost("tim-kiem-nguoi-dung")]
+        public IActionResult SearchNguoiDung([FromBody]SearchNguoiDungReq req)
+        {
+            var res = new SingleRsp();
+            var pros = _svc.SearchNguoiDung(req.KeyWordUs, req.PageUs, req.SizeUs);
+            res.Data = pros;
+            return Ok(res);
+        }
     }
 }

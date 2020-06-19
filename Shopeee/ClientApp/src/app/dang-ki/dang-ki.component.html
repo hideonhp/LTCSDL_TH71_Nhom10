@@ -1,0 +1,26 @@
+<p style="color: skyblue;">Vui lòng nhập thông tin tài khoản: </p>
+<hr>
+<table class ="table table-bordered">
+    <thead>
+        <tr>
+            <th>Tài khoản: </th>
+            <th>Mật khẩu: </th>
+            <th>Họ Và Tên: </th>
+            <th>Số Điện Thoại: </th>
+            <th>Địa Chỉ: </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><input type ="text" class = "form-control" [(ngModel)] ="TenDangNhap"/></td>
+            <td><input type ="password" class = "form-control" [(ngModel)] ="MatKhau"/></td>
+            <td><input type ="text" class = "form-control" [(ngModel)] ="HoVaTen"/></td>
+            <td><input type ="text" class = "form-control" [(ngModel)] ="SoDienThoai"/></td>
+            <td><input type ="text" class = "form-control" [(ngModel)] ="DiaChi"/></td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<button class ="btn btn-success" (click) = "dangki()" style="font-size: larger;">Đăng Kí</button>
+<hr>
+<p style="color: skyblue;">Khi bạn ấn nút <a a href="#" target="_self">Đăng Kí</a>, điều đó có nghĩa là bạn đã đồng ý<a href="#" target="_self"> điều khoản sử dụng</a> của chúng tôi !!! </p>

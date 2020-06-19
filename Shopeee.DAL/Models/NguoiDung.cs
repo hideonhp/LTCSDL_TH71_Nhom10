@@ -5,11 +5,6 @@ namespace Shopeee.DAL.Models
 {
     public partial class NguoiDung
     {
-        public NguoiDung()
-        {
-            DonHang = new HashSet<DonHang>();
-        }
-
         public int IdUser { get; set; }
         public int IdTypeUser { get; set; }
         public string TenDangNhap { get; set; }
@@ -19,6 +14,5 @@ namespace Shopeee.DAL.Models
         public string DiaChi { get; set; }
 
         public virtual KieuNguoiDung IdTypeUserNavigation { get; set; }
-        public virtual ICollection<DonHang> DonHang { get; set; }
     }
 }

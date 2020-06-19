@@ -10,6 +10,6 @@ namespace Shopeee.DAL.Models
         public string SoLuong { get; set; }
 
         public virtual DonHang IdDonHangNavigation { get; set; }
-        public virtual Products IdSanPhamNavigation { get; set; }
+        public virtual SanPham IdSanPhamNavigation { get; set; }
     }
 }

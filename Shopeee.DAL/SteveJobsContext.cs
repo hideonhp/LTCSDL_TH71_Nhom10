@@ -20,13 +20,13 @@ namespace Shopeee.DAL.Models
         public virtual DbSet<KieuNguoiDung> KieuNguoiDung { get; set; }
         public virtual DbSet<LoaiSanPham> LoaiSanPham { get; set; }
         public virtual DbSet<NguoiDung> NguoiDung { get; set; }
-        public virtual DbSet<Products> SanPham { get; set; }
+        public virtual DbSet<SanPham> SanPham { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-PO58C85;Initial Catalog=SteveJobs;Persist Security Info=True;User ID=sa;Password=123456;Pooling=False;MultipleActiveResultSets=False;Encrypt=False;TrustServerCertificate=True;");
             }
         }
@@ -58,23 +58,11 @@ namespace Shopeee.DAL.Models
             {
                 entity.HasKey(e => e.IdDonHang);
 
-                entity.Property(e => e.IdDonHang).ValueGeneratedNever();
-
                 entity.Property(e => e.NgayDat).HasColumnType("datetime");
 
-                entity.Property(e => e.TinhTrangDonHang)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
+                entity.Property(e => e.TinhTrangDonHang).HasMaxLength(50);
 
-                entity.Property(e => e.TongTien)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.IdUserNavigation)
-                    .WithMany(p => p.DonHang)
-                    .HasForeignKey(d => d.IdUser)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_DonHang_NguoiDung");
+                entity.Property(e => e.TongTien).HasMaxLength(50);
             });
 
             modelBuilder.Entity<KieuNguoiDung>(entity =>
@@ -92,19 +80,19 @@ namespace Shopeee.DAL.Models
             {
                 entity.HasKey(e => e.IdLoai);
 
-                //entity.Property(e => e.IdLoai).ValueGeneratedNever();
-
                 entity.Property(e => e.TenLoai)
                     .IsRequired()
                     .HasMaxLength(50);
-                    //.IsUnicode(false);
             });
 
             modelBuilder.Entity<NguoiDung>(entity =>
             {
                 entity.HasKey(e => e.IdUser);
+
                 entity.Property(e => e.DiaChi).HasMaxLength(50);
+
                 entity.Property(e => e.HoVaTen).HasMaxLength(50);
+
                 entity.Property(e => e.MatKhau)
                     .IsRequired()
                     .HasMaxLength(50)
@@ -126,24 +114,15 @@ namespace Shopeee.DAL.Models
                     .HasConstraintName("FK_NguoiDung_KieuNguoiDung");
             });
 
-            modelBuilder.Entity<Products>(entity =>
+            modelBuilder.Entity<SanPham>(entity =>
             {
                 entity.HasKey(e => e.IdSanPham);
 
-                //entity.Property(e => e.IdSanPham).ValueGeneratedNever();
-
-                entity.Property(e => e.Gia)
-                    .IsRequired()
-                    .HasMaxLength(50);
-                //.IsUnicode(false);
-
-                entity.Property(e => e.MoTa);
-                    //.IsUnicode(false);
+                entity.Property(e => e.Gia).HasMaxLength(50);
 
                 entity.Property(e => e.Ten)
                     .IsRequired()
                     .HasMaxLength(50);
-                    //.IsUnicode(false);
 
                 entity.HasOne(d => d.IdLoaiNavigation)
                     .WithMany(p => p.SanPham)

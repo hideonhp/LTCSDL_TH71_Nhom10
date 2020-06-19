@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Shopeee.DAL.Models
 {
-    public partial class Products
+    public partial class SanPham
     {
-        public Products()
+        public SanPham()
         {
             ChiTietDonHang = new HashSet<ChiTietDonHang>();
         }

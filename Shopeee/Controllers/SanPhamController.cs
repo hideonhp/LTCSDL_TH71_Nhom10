@@ -45,5 +45,12 @@ namespace Shopeee.Web.Controllers
         {
             return null;
         }
+        [HttpPost("SanPham_Select_by_Id")]
+        public IActionResult SanPham_Select_by_Id([FromBody]ProductsReq req)
+        {
+            var res = new SingleRsp();
+            res.Data = _svc.SanPham_Select_by_Id(req.IdLoai);
+            return Ok(res);
+        }
     }
 }
