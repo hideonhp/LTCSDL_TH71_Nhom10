@@ -15,6 +15,7 @@ import { AdminComponent } from './admin/admin.component';
 import { FailLoginComponent } from './fail-login/fail-login.component';
 import { KhachHangComponent } from './khach-hang/khach-hang.component';
 import { DangKiComponent } from './dang-ki/dang-ki.component';
+import { GioHangComponent } from './gio-hang/gio-hang.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DangKiComponent } from './dang-ki/dang-ki.component';
     DangKiComponent,
     AdminComponent,
     FailLoginComponent,
-    KhachHangComponent
+    KhachHangComponent,
+    GioHangComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,7 +45,8 @@ import { DangKiComponent } from './dang-ki/dang-ki.component';
       { path: 'dang-ki', component: DangKiComponent},
       { path: 'admin', component: AdminComponent},
       { path: 'fail-login', component: FailLoginComponent},
-      { path: 'khach-hang', component: KhachHangComponent}
+      { path: 'khach-hang', component: KhachHangComponent},
+      { path: 'gio-hang', component: GioHangComponent}
     ])
   ],
   providers: [],

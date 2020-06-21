@@ -1,9 +1,8 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Shopeee.DAL.Models;
 
-namespace Shopeee.DAL
+namespace Shopeee.DAL.Models
 {
     public partial class SteveJobsContext : DbContext
     {
@@ -18,7 +17,6 @@ namespace Shopeee.DAL
 
         public virtual DbSet<ChiTietDonHang> ChiTietDonHang { get; set; }
         public virtual DbSet<DonHang> DonHang { get; set; }
-        public virtual DbSet<GioHang> GioHang { get; set; }
         public virtual DbSet<KieuNguoiDung> KieuNguoiDung { get; set; }
         public virtual DbSet<LoaiSanPham> LoaiSanPham { get; set; }
         public virtual DbSet<NguoiDung> NguoiDung { get; set; }
@@ -65,13 +63,6 @@ namespace Shopeee.DAL
                 entity.Property(e => e.TinhTrangDonHang).HasMaxLength(50);
 
                 entity.Property(e => e.TongTien).HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<GioHang>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.Property(e => e.IdGioHang).ValueGeneratedOnAdd();
             });
 
             modelBuilder.Entity<KieuNguoiDung>(entity =>

@@ -108,6 +108,7 @@ export class AdminComponent implements OnInit {
         this.isEdit = true;
         this.searchNguoiDung(1);
         alert("Thêm sản phẩm thành công !!!")
+        this.searchNguoiDung(1);
       }
     }, error => console.error(error));
   }

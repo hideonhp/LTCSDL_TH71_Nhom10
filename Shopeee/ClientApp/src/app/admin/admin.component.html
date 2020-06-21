@@ -1,102 +1,109 @@
+<div>
+  <app-san-pham></app-san-pham>
+</div>
 <h1 id="tableLabelX">Quản Lý Người Dùng</h1>
 
 <p *ngIf="!NguoiDungX"><em>Loading...</em></p>
-<button class="btn btn-primary"(click)="openModalX(true,null)">Thêm người dùng mới</button>
+<button class="btn btn-primary" (click)="openModalX(true,null)">Thêm người dùng mới</button>
 <table class='table table-striped' aria-labelledby="tableLabelX" *ngIf="NguoiDungX.totalRecord>0">
-    <thead>
-      <tr>
-        <th>Id Người Dùng</th>
-        <th>Id Loại</th>
-        <th>Tên Đăng Nhập</th>
-        <th>Mật Khẩu</th>
-        <th>Họ Và Tên</th>
-        <th>Số Điện Thoại</th>
-        <th>Địa Chỉ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let u of NguoiDungX.data; index as i;">
-        <td>{{ u.idUser }}</td>
-        <td>{{ u.idTypeUser }}</td>
-        <td>{{ u.tenDangNhap }}</td>
-        <td>{{ u.matKhau }}</td>
-        <td>{{ u.hoVaTen }}</td>
-        <td>{{ u.soDienThoai }}</td>
-        <td>{{ u.diaChi }}</td>
-        <td>
-          <button class="btn btn-info btm-sm"(click)="openModalX(false,i)">Sửa</button>
-          <button class="btn btn-danger btm-sm"(click)="deleteNguoiDung(i)">Xóa</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <ul class="pagination">
-    <li class="page-item">
-            <a href="javascript:void(0);" (click)="searchNguoiDungPrevious()">Trang Trước</a>
-    </li>
-    <li class="page-item">{{NguoiDungX.pageUs}}</li>
-    <li class="page-item">
-            <a href="javascript:void(0);" (click)="searchNguoiDungNext()">Trang Sau</a>
-    </li>
+  <thead>
+    <tr>
+      <th>Id Người Dùng</th>
+      <th>Id Loại</th>
+      <th>Tên Đăng Nhập</th>
+      <th>Mật Khẩu</th>
+      <th>Họ Và Tên</th>
+      <th>Số Điện Thoại</th>
+      <th>Địa Chỉ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of NguoiDungX.data; index as i;">
+      <td>{{ u.idUser }}</td>
+      <td>{{ u.idTypeUser }}</td>
+      <td>{{ u.tenDangNhap }}</td>
+      <td>{{ u.matKhau }}</td>
+      <td>{{ u.hoVaTen }}</td>
+      <td>{{ u.soDienThoai }}</td>
+      <td>{{ u.diaChi }}</td>
+      <td>
+        <button class="btn btn-info btm-sm" (click)="openModalX(false,i)">Sửa</button>
+        <button class="btn btn-danger btm-sm" (click)="deleteNguoiDung(i)">Xóa</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination">
+  <li class="page-item">
+    <a class="page-link" href="javascript:void(0);" (click)="searchNguoiDungPrevious()">Trang Trước</a>
+  </li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);"
+      (click)="searchNguoiDungPrevious()">{{NguoiDungX.pageUs-1}}</a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="javascript:void(0);" (click)="searchNguoiDung(1)">{{NguoiDungX.pageUs}}<span class="sr-only">(current)</span></a>
+  </li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNguoiDungNext()">{{NguoiDungX.pageUs+1}}</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="javascript:void(0);" (click)="searchNguoiDungNext()">Trang Sau</a>
+  </li>
+</ul>
 
-  </ul>
-  
 
-  <div class="modal fade" id="exampleModalX" tabindex="-1" role="dialog" aria-labelledby="exampleModalXLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" *ngIf ="!isEdit" id="exampleModalXLabel">Thêm người dùng mới</h5>
-          <h5 class="modal-title" *ngIf ="isEdit" id="exampleModalXLabel">Cập nhập người dùng</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+<div class="modal fade" id="exampleModalX" tabindex="-1" role="dialog" aria-labelledby="exampleModalXLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" *ngIf="!isEdit" id="exampleModalXLabel">Thêm người dùng mới</h5>
+        <h5 class="modal-title" *ngIf="isEdit" id="exampleModalXLabel">Cập nhập người dùng</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row" *ngIf="isEdit">
+          <div class="col-4">Id Người Dùng</div>
+          <div class="col-8"><input class="form-control" type="number" [(ngModel)]="NguoiDung.IdUser"></div>
         </div>
-        <div class="modal-body">
-          <div class="row" *ngIf ="isEdit">
-            <div class="col-4">Id Người Dùng</div>
-            <div class="col-8"><input class="form-control" type="number" [(ngModel)]="NguoiDung.IdUser"></div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-4">Id Loại</div>
-            <div class="col-8"><input class="form-control" type="number" [(ngModel)]="NguoiDung.IdTypeUser"></div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-4">Tên Đăng Nhập</div>
-            <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.TenDangNhap"></div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-4">Mật Khẩu</div>
-            <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.MatKhau"></div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-4">Họ Và Tên</div>
-            <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.HoVaTen"></div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-4">Số Điện Thoại</div>
-            <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.SoDienThoai"></div>
-          </div>
-          <br/>
-          <div class="row">
-            <div class="col-4">Địa Chỉ</div>
-            <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.DiaChi"></div>
-          </div>
-          <br/>
+        <br />
+        <div class="row">
+          <div class="col-4">Id Loại</div>
+          <div class="col-8"><input class="form-control" type="number" [(ngModel)]="NguoiDung.IdTypeUser"></div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-          <button type="button" class="btn btn-primary" *ngIf ="isEdit" (click)="updateNguoiDung()">Lưu lại</button>
-          <button type="button" class="btn btn-success" *ngIf ="!isEdit"(click)="addNguoiDung()">Thêm</button>
+        <br />
+        <div class="row">
+          <div class="col-4">Tên Đăng Nhập</div>
+          <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.TenDangNhap"></div>
         </div>
+        <br />
+        <div class="row">
+          <div class="col-4">Mật Khẩu</div>
+          <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.MatKhau"></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-4">Họ Và Tên</div>
+          <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.HoVaTen"></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-4">Số Điện Thoại</div>
+          <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.SoDienThoai"></div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-4">Địa Chỉ</div>
+          <div class="col-8"><input class="form-control" type="text" [(ngModel)]="NguoiDung.DiaChi"></div>
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+        <button type="button" class="btn btn-primary" *ngIf="isEdit" (click)="updateNguoiDung()">Lưu lại</button>
+        <button type="button" class="btn btn-success" *ngIf="!isEdit" (click)="addNguoiDung()">Thêm</button>
       </div>
     </div>
   </div>
-  <div>
-    <app-san-pham></app-san-pham>
-  </div>
+</div>

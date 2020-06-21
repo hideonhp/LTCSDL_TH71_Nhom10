@@ -1,3 +1,38 @@
-<div class="container">
-  <app-loai-san-pham></app-loai-san-pham>
-</div>
+<h1 id="tableLabelSP">Giới Thiệu Sản Phẩm</h1>
+
+<p *ngIf="!productX"><em>Loading...</em></p>
+<table class='table table-striped' aria-labelledby="tableLabelSP" *ngIf="productX.totalRecord>0">
+    <thead>
+      <tr>
+        <th>Tên Sản Phẩm</th>
+        <th>Mô Tả</th>
+        <th>Giá Bán lẻ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sp of productX.data; index as i;">
+        <td>{{ sp.ten }}</td>
+        <td>{{ sp.moTa }}</td>
+        <td>{{ sp.gia }}</td>
+        <td>
+          <button class="btn btn-primary">Xem Chi Tiết</button>
+          <button class="btn btn-info btm-sm"(click)="openModal(false,i)">Thêm Vào Giỏ Hàng</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="pagination">
+    <li class="page-item">
+            <a class="page-link"  href="javascript:void(0);" (click)="searchPreviousSp()">Trang Trước</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchPreviousSp()">{{productX.page-1}}</a></li>
+    <li class="page-item active">
+      <a class="page-link" href="javascript:void(0);" (click)="searchProductX(1)">{{productX.page}}<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNextSp()">{{productX.page+1}}</a></li>
+    <li class="page-item">
+            <a class="page-link" href="javascript:void(0);" (click)="searchNextSp()">Trang Sau</a>
+    </li>
+
+  </ul>
+  

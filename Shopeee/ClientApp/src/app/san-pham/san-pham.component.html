@@ -5,10 +5,10 @@
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="products.totalRecord>0">
     <thead>
       <tr>
-        <th>idSanPham</th>
-        <th>ten</th>
-        <th>moTa</th>
-        <th>gia</th>
+        <th>Id Sản Phẩm</th>
+        <th>Tên</th>
+        <th>Mô tả</th>
+        <th>Giá</th>
       </tr>
     </thead>
     <tbody>
@@ -26,11 +26,18 @@
   </table>
   <ul class="pagination">
     <li class="page-item">
-            <a href="javascript:void(0);" (click)="searchPrevious()">Trang Trước</a>
+      <a class="page-link" href="javascript:void(0);" (click)="searchPrevious()">Trang Trước</a>
     </li>
-    <li class="page-item">{{products.page}}</li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);"
+        (click)="searchPrevious()">{{products.page-1}}</a>
+    </li>
+    <li class="page-item active">
+      <a class="page-link" href="javascript:void(0);" (click)="searchProduct(1)">{{products.page}}<span class="sr-only">(current)</span></a>
+    </li>
+    <li class="page-item"><a class="page-link" href="javascript:void(0);" (click)="searchNext()">{{products.page+1}}</a>
+    </li>
     <li class="page-item">
-            <a href="javascript:void(0);" (click)="searchNext()">Trang Sau</a>
+      <a class="page-link" href="javascript:void(0);" (click)="searchNext()">Trang Sau</a>
     </li>
 
   </ul>

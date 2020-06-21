@@ -25,12 +25,26 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-dark" [routerLink]="['/']"></a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/dang-nhap']" style="color: skyblue;"
               >Đăng nhập</a
             >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/loai-san-pham']" style="color: skyblue;"
+              >Loại Sản Phẩm</a
+            >
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/gio-hang']" style="color: skyblue;"
+              >Giỏ hàng</a
+            >
+          </li>
+          <li>
+            <input type="text" placeholder="Nhập thông tin... ">
+            <button class="btn btn-primary">Tìm Kiếm</button>
           </li>
         </ul>
       </div>
